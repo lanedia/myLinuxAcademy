@@ -9,6 +9,7 @@ mkdir -p ${Module}/templates
 mkdir -p ${Module}/lib
 mkdir -p ${Module}/facts.d
 mkdir -p ${Module}/spec
+mkdir -p ${Module}/tests
 
 cd $Module
 echo "This is my MOTD file" >files/motd
@@ -20,3 +21,4 @@ echo "                source => \"puppet:///modules/motd/motd\",">>manifests/ini
 echo "        }">>manifests/init.pp
 echo "}">>manifests/init.pp
 
+echo "include motd" > tests/init.pp

@@ -20,3 +20,13 @@ e[root@lanedia3 ~]# puppet cert sign "lanedia4.mylabserver.com"
 Notice: Signed certificate request for lanedia4.mylabserver.com
 Notice: Removing file Puppet::SSL::CertificateRequest lanedia4.mylabserver.com at '/etc/puppetlabs/puppet/ssl/ca/requests/lanedia4.mylabserver.com.pem'
 
+
+
+
+
+vi /etc/puppetlabs/puppet/manifests/site.pp
+look for node default
+node default {
+	class { 'motd': }
+}
+
