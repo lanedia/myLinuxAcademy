@@ -10,3 +10,13 @@ mkdir -p ${Module}/lib
 mkdir -p ${Module}/facts.d
 mkdir -p ${Module}/spec
 
+cd $Module
+echo "This is my MOTD file" >files/motd
+
+echo "class motd {">>manifests/init.pp
+echo "        file { \"/etc/motd\":">>manifests/init.pp
+echo "                ensure => 'file',">>manifests/init.pp
+echo "                source => \"puppet:///modules/motd/motd\",">>manifests/init.pp
+echo "        }">>manifests/init.pp
+echo "}">>manifests/init.pp
+
